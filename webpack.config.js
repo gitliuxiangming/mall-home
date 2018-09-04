@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath="/";
 
 //生成HtmlWebpackPlugin配置
-cosnt getHtmlConfig = (name)=>({
+const getHtmlConfig = (name)=>({
 	filename: name+'.html',
 	template: './src/view/'+name+'.html',
 	inject:true,
@@ -22,6 +22,12 @@ module.exports={
 		'index':'./src/pages/index/index.js',
 		'user-login':'./src/pages/user-login/index.js'
 	},
+	/*
+	//额外配置jquery的模板
+	externals:{
+		'jquery':'window.jQuery'
+	}
+	*/
 	output:{
 		filename:'js/[name].js',
 		publicPath:publicPath,
@@ -33,7 +39,8 @@ module.exports={
 		alias:{
 			pages:path.resolve(__dirname,'./src/pages/'),
 			util:path.resolve(__dirname,'./src/util/'),
-			api:path.resolve(__dirname,'./src/api/'),
+			service:path.resolve(__dirname,'./src/service/'),
+			node_modules:path.resolve(__dirname,'./node_modules/'),
 			common:path.resolve(__dirname,'./src/common/'),
 		},
 	},
@@ -52,9 +59,15 @@ module.exports={
 		        ]
 			},
 		    {
-		        test:/\.(png|jpg|gif)$/,
+		        test:/\.(png|jpg|gif|ttf|woff2|woff|eot|svg)\??.*$/,
 		        use:[
-		          'url-loader'
+		        	{
+		          		loader:'url-loader',
+		          		options:{
+		          			limit:100,//图片大小限制，小于该值时打包为barse64格式
+		          			name:'resource/[name].[ext]'//文件打包后的目录
+		          		}
+		       		}
 		        ]
 		     },
 		     {
@@ -73,7 +86,7 @@ module.exports={
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
 		new MiniCssExtractPlugin({
-	      filename: "[name].css",
+	      filename: "css/[name].css",
 	      chunkFilename: "[id].css"
 	    }),
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
@@ -83,8 +96,13 @@ module.exports={
 	devServer: {
     	contentBase:'./dist',
     	port:3002,
-    	historyApiFallback:true,
-    	
+    	//代理
+		proxy:{
+			"/user":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
+			}
+		}    	
    	},
 
 };

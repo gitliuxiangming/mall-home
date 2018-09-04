@@ -1,1 +1,2 @@
-console.log('index...')
+require('../common/nav/index.js')
+require('./index.css')
