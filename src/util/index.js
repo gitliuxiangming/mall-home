@@ -8,7 +8,7 @@ var _util = {
 			data:params.data || '',
 			success:function(result){
 				if(result.code == 0){
-
+					params.success && params.success(result.data)
 				}
 				else if(result.code == 10){
 					_this.doLogin();
@@ -31,6 +31,12 @@ var _util = {
 	goHome:function(){
 		window.location.href = '/'
 	},
+	getParamFromUrl:function(key){
+        var URL = window.location.search.substr(1);
+		var reg = new RegExp("(^|&)"+ key +"=([^&]*)(&|$)");
+		var result = URL.match(reg);
+		return result ? decodeURIComponent(result[2]) : null;
+	},
 	validate:function(value,type){
 		var value = $.trim(value)
 		//非空验证
@@ -44,6 +50,14 @@ var _util = {
 		//密码格式
 		if(type === 'password'){
 			return /^[a-zA-Z0-9_]{3,10}$/.test(value)
+		}
+		//手机号格式
+		if(type === 'phone'){
+			return /^1[3578]\d{9}$/.test(value)
+		}
+		//密码格式
+		if(type === 'email'){
+			return /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value)
 		}
 
 

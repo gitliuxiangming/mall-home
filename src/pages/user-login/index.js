@@ -5,8 +5,8 @@ require('pages/common/footer')
 var _util = require('util')
 var _user = require('../../service/user/')
 var formErr = {
-	show:function(validateResult){
-		$('.error-item').show().find('.error-msg').text(validateResult.msg)
+	show:function(msg){
+		$('.error-item').show().find('.error-msg').text(msg)
 	},
 	hide:function(){
 		$('.error-item').hide().find('.error-msg').text('')
@@ -40,18 +40,18 @@ var page = {
 			formErr.hide()
 			_user.login(formData,function(){
 				_util.goHome()
-			},function(){
-				formErr.show(result.message)
+			},function(message){
+				formErr.show(message)
 			})
 		}else{
-			formErr.show(validateResult)
+			formErr.show(validateResult.msg)
 		}
 		//验证失败
 	},
 	validate:function(formData){
 		var result = {
 			status:false,
-			mag:''
+			msg:''
 		}
 		//验证用户名不能为空
 		if(!_util.validate(formData.username,"require")){

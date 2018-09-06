@@ -1,0 +1,14 @@
+.result{
+	min-height: 300px;
+	background: #999;
+	padding: 100px;
+	text-align: center;
+}
+.result-box{
+	display: none;
+}
+.result .title{
+	font-size: 30px;
+	color: #fff;
+	margin-bottom: 10px;
+}

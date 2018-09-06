@@ -20,7 +20,10 @@ var nav = {
 		})
 	},
 	loadUserInfo:function(){
-
+		_user.getUserInfo(function(userInfo){
+			$('.not-login').hide()
+			$('.login').show().find('.username').text(userInfo.username)
+		})
 	},
 	loadCartInfo:function(){
 

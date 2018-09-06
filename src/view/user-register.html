@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>注册</title>
+	<title>
+		<% htmlWebpackPlugin.options.title %> -shopmall电商平台 
+	</title>
 </head>
 <body>
-	注册页面
+	<%=require('html-loader!./common/logo.html')%>
+	<div class="form">
+		<div class="container">
+			<div class="form-box">
+				<h2 class="title">用户登录</h2>
+				<div class="error-item">
+					<i class="fa fa-times error-icon"></i>
+					<p class="error-msg">error</p>
+				</div>
+				<div class="form-item">
+					<label for="" class="form-label"> 
+						<i class="fa fa-user"></i>
+					</label>
+					<input type="text" class="form-content" name="username" placeholder="请输入用户名">
+				</div>
+				<div class="form-item">
+					<label for="" class="form-label"> 
+						<i class="fa fa-lock"></i>
+					</label>
+					<input type="password" class="form-content" name="password" placeholder="请输入密码">
+				</div>
+				<div class="form-item">
+					<label for="" class="form-label"> 
+						<i class="fa fa-lock"></i>
+					</label>
+					<input type="password" class="form-content" name="repassword" placeholder="请再次输入密码">
+				</div>
+				<div class="form-item">
+					<label for="" class="form-label"> 
+						<i class="fa fa-phone"></i>
+					</label>
+					<input type="text" class="form-content" name="phone" placeholder="请输入手机号">
+				</div>
+				<div class="form-item">
+					<label for="" class="form-label"> 
+						<i class="fa fa-envelope"></i>
+					</label>
+					<input type="text" class="form-content" name="email" placeholder="请输入邮箱">
+				</div>
+				<div class="btn-item">
+					<a href="javascript:;" class="btn btn-submit" id="btn-submit">提交</a>
+				</div>
+				<div class="link-item">
+					<a href="./user-login.html" class="link">已有账号去登陆</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%=require('html-loader!./common/footer.html')%>
 </body>
 </html>
