@@ -26,7 +26,27 @@ var _util = {
 		alert(msg)
 	},
 	doLogin:function(){
-		window.location.href = '../user-login.html'
+		window.location.href = 'user-login.html'
+	},
+	goHome:function(){
+		window.location.href = '/'
+	},
+	validate:function(value,type){
+		var value = $.trim(value)
+		//非空验证
+		if(type === 'require'){
+			return !!value
+		}
+		//用户名格式
+		if(type === 'username'){
+			return /^[a-zA-Z0-9_]{3,10}$/.test(value)
+		}
+		//密码格式
+		if(type === 'password'){
+			return /^[a-zA-Z0-9_]{3,10}$/.test(value)
+		}
+
+
 	}
 }
 

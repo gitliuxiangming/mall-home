@@ -20,7 +20,8 @@ module.exports={
 	entry:{
 		'common':'./src/pages/common/index.js',
 		'index':'./src/pages/index/index.js',
-		'user-login':'./src/pages/user-login/index.js'
+		'user-login':'./src/pages/user-login/index.js',
+		'user-register':'./src/pages/user-register/index.js'
 	},
 	/*
 	//额外配置jquery的模板
@@ -91,6 +92,7 @@ module.exports={
 	    }),
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register')),
 		
 	], 
 	devServer: {

@@ -22,3 +22,19 @@ body{
 .hide{
 	display: none;
 }
+.btn{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	background: #f21;
+	text-decoration: none;
+	text-align: center;
+	color:#fff;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.btn:hover{
+	opacity: 0.8;
+}
