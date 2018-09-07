@@ -24,6 +24,11 @@ var page = {
 		$('#btn-submit').on('click',function(){
 			_self.submit();
 		})
+		$('.enterEvent').on('keyup',function(e){
+			if(e.keyCode == 13){
+				_self.submit();
+			}
+		})
 	},
 	submit:function(){
 		//1.获取数据
@@ -46,11 +51,7 @@ var page = {
 		}else{
 			formErr.show(validateResult.msg)
 		}
-		$('#btn-submit').on('keyup',function(){
-			if(e.keyCode == 13){
-				_self.submit();
-			}
-		})
+		
 		//验证失败
 	},
 	validate:function(formData){
