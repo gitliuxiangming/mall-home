@@ -12,3 +12,6 @@
 	color: #fff;
 	margin-bottom: 10px;
 }
+.btns .btn:first-child{
+	margin-right: 10px;
+}

@@ -25,7 +25,6 @@ var page={
 	},
 	loadUserInfo:function(){
 		_user.getUserInfo(function(userInfo){
-			// console.log(userInfo)
 			var html = _util.render(tpl,userInfo)
 			$('.content').html(html)
 		})

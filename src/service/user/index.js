@@ -55,6 +55,15 @@ var _user = {
 		})
 
 	},
+	updatePassword:function(data,success,error){
+		_util.request({
+			method:'put',
+			url:'/user/updatePassword',
+			data:data,
+			success:success,
+			error:error
+		})
+	}
 	
 }
 
