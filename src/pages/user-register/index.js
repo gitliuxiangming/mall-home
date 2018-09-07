@@ -37,6 +37,11 @@ var page = {
 		$('#btn-submit').on('click',function(){
 			_self.submit();
 		})
+		$('#btn-submit').on('keyup',function(){
+			if(e.keyCode == 13){
+				_self.submit();
+			}
+		})
 	},
 	submit:function(){
 		//1.获取数据

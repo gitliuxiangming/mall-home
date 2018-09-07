@@ -4,6 +4,18 @@ body{
 	font-size: 12px;
 }
 
+.clearfix:after{
+	clear: both;
+	height: 0px;
+	content: '';
+	overflow: hidden;
+	display: block;
+}
+
+.clearfix{
+	zoom:1;
+}
+
 .link{
 	text-decoration: none;
 	color: #888;
@@ -39,17 +51,35 @@ body{
 	opacity: 0.8;
 }
 
+/*
+loge共同样式
+*/
+
+.logo-box{
+	background: #fff;
+	padding: 3px;
+}
+.logo-text{
+	color: #f21;
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: bold;
+}
 
 
+/*
+表单共同样式
+*/
 .form{
 	background: #bdbdbd;
 	overflow: hidden;
 }
 .form-box{
-	width: 400px;
+	width: 300px;
 	margin:50px auto;
 	background: #fff;
 	padding: 30px;
+	border-radius: 10px;
 }
 .form-box .title{
 	font-size: 20px;
@@ -87,7 +117,7 @@ body{
 	border-right: 1px solid #999;
 }
 .form-box .form-content{
-	width: 300px;
+	width: 200px;
 	line-height: 30px;
 	outline: none;
 	border:none;

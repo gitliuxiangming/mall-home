@@ -1,9 +1,10 @@
 .footer{
-	margin-top: 10px;
+	margin-top: 20px;
 	text-align:center; 
+	background: #ccc;
 }
 .links{
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .links .link{
 	padding: 0 10px;

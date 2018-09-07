@@ -21,6 +21,7 @@ module.exports={
 	entry:{
 		'common':'./src/pages/common/index.js',
 		'index':'./src/pages/index/index.js',
+		'user-content':'./src/pages/user-content/index.js',
 		'user-login':'./src/pages/user-login/index.js',
 		'user-register':'./src/pages/user-register/index.js',
 		'result':'./src/pages/result/index.js'
@@ -82,6 +83,12 @@ module.exports={
                         presets: ['env', 'react','es2015','stage-3'],
                     }
                 },            
+            },
+            {
+            	test:/\.tpl$/,
+                use: {
+                    loader: 'html-loader',
+                },
             }
 		]
 	},
@@ -96,6 +103,7 @@ module.exports={
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','结果提示')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-content','用户中心')),
 		
 	], 
 	devServer: {

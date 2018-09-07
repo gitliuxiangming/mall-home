@@ -1,3 +1,5 @@
+var Hogan = require('hogan.js')
+
 var _util = {
 	request:function(params){
 		var _this=this;
@@ -25,8 +27,13 @@ var _util = {
 	showErrorMsg:function(msg){
 		alert(msg)
 	},
+	render:function(tmp,data){
+		var template = Hogan.compile(tmp);
+		var html = template.render(data);
+		return html;
+	},
 	doLogin:function(){
-		window.location.href = 'user-login.html'
+		window.location.href = 'user-login.html?redirect='+decodeURIComponent(window.location.href)
 	},
 	goHome:function(){
 		window.location.href = '/'

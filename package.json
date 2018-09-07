@@ -32,6 +32,7 @@
   },
   "description": "",
   "dependencies": {
+    "hogan.js": "^3.0.2",
     "jquery": "^3.3.1"
   }
 }

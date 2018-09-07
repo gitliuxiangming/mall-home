@@ -1,0 +1,21 @@
+.side{
+	float: left;
+	width: 150px;
+	min-height: 600px;
+	background: #fefeef;
+	margin-right: 20px;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+.side-item{
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.side-item.active .link{
+	color:#f21;
+}
+.side-item.active{
+	border-right:2px solid #f21;
+}

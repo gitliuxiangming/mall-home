@@ -20,6 +20,13 @@ var _user = {
 		})
 
 	},
+	getUserName:function(success,error){
+		_util.request({
+			url:'/user/username',
+			success:success,
+			error:error
+		})
+	},
 	getUserInfo:function(success,error){
 		_util.request({
 			url:'/user/userInfo',

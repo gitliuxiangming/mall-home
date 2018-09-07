@@ -1,0 +1,29 @@
+.search-box{
+	background: #FFF;
+	height: 80px;
+	padding: 18px 0;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.logo{
+	float: left;
+}
+.search{
+	float: left;
+}
+.search-input{
+	width: 400px;
+	margin-left: 100px;
+	outline: none;
+	border:2px solid #f21;
+	height: 38px;
+	padding-left: 10px;
+	font-size: 14px;
+	float:left;
+	color:#999;
+}
+.btn-search{
+	height: 42px;
+	line-height: 42px;
+	float:left;
+}

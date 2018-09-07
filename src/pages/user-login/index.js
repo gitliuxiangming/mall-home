@@ -39,13 +39,18 @@ var page = {
 		if(validateResult.status){
 			formErr.hide()
 			_user.login(formData,function(){
-				_util.goHome()
+				window.location.href = _util.getParamFromUrl('redirect') || './index.html'
 			},function(message){
 				formErr.show(message)
 			})
 		}else{
 			formErr.show(validateResult.msg)
 		}
+		$('#btn-submit').on('keyup',function(){
+			if(e.keyCode == 13){
+				_self.submit();
+			}
+		})
 		//验证失败
 	},
 	validate:function(formData){
