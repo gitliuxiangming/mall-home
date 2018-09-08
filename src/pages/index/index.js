@@ -7,6 +7,7 @@ require('./index.css')
 var _util = require('util')
 var keywordTpl = require('./keywords.tpl')
 var carouselTpl = require('./carousel.tpl')
+var floorlTpl = require('./floor.tpl')
 
 
 var page = {
@@ -32,9 +33,53 @@ var page = {
 		{categoryId:'3333',image:require('images/carousel/carousel-7.jpg')},
 		{categoryId:'3333',image:require('images/carousel/carousel-8.jpg')},
 	],
+	floor:[
+		{
+			title:'F1 数码',
+			item:[
+				{categoryId:'1111',text:'华为',image:require('images/floor/floor-1-01.jpg')},
+				{categoryId:'2222',text:'小米',image:require('images/floor/floor-1-02.jpg')},
+				{categoryId:'3333',text:'荣耀',image:require('images/floor/floor-1-03.jpg')},
+				{categoryId:'4444',text:'vivo',image:require('images/floor/floor-1-04.jpg')},
+				{categoryId:'5555',text:'oppo',image:require('images/floor/floor-1-05.jpg')},
+			],
+		},
+		{
+			title:'F2 服装',
+			item:[
+				{categoryId:'1111',text:'裙子',image:require('images/floor/floor-2-01.jpg')},
+				{categoryId:'2222',text:'体恤',image:require('images/floor/floor-2-02.jpg')},
+				{categoryId:'3333',text:'蝙蝠衫',image:require('images/floor/floor-2-03.jpg')},
+				{categoryId:'4444',text:'卫衣',image:require('images/floor/floor-2-04.jpg')},
+				{categoryId:'5555',text:'衬衫',image:require('images/floor/floor-2-05.jpg')},
+			],
+		},
+		{
+			title:'F3 箱包',
+			item:[
+				{categoryId:'1111',text:'男包',image:require('images/floor/floor-3-01.jpg')},
+				{categoryId:'2222',text:'女包',image:require('images/floor/floor-3-02.jpg')},
+				{categoryId:'3333',text:'行李箱',image:require('images/floor/floor-3-03.jpg')},
+				{categoryId:'4444',text:'双肩包',image:require('images/floor/floor-3-04.jpg')},
+				{categoryId:'5555',text:'单肩包',image:require('images/floor/floor-3-05.jpg')},
+			],
+		},
+		{
+			title:'F4 眼镜',
+			item:[
+				{categoryId:'1111',text:'防辐射',image:require('images/floor/floor-4-01.jpg')},
+				{categoryId:'2222',text:'司机眼镜',image:require('images/floor/floor-4-02.jpg')},
+				{categoryId:'3333',text:'3D眼镜',image:require('images/floor/floor-4-03.jpg')},
+				{categoryId:'4444',text:'色盲眼镜',image:require('images/floor/floor-4-04.jpg')},
+				{categoryId:'5555',text:'太阳镜',image:require('images/floor/floor-4-05.jpg')},
+			],
+		},
+		
+	],
 	init:function(){
 		this.loadKeywords()
 		this.loadCarousel()
+		this.loadFloor()
 	},
 	loadKeywords:function(){
 		var html = _util.render(keywordTpl,{
@@ -59,9 +104,12 @@ var page = {
 	    	var direction = $(this).hasClass('next') ? 'next' : 'prev';
 	    	$carousel.data('unslider')[direction]();
  	    })
-
-	    
-	    
+	},
+	loadFloor:function(){
+		var html = _util.render(floorlTpl,{
+			floor:this.floor
+		});
+		$(".floor-wrap").html(html)
 	}
 }
 

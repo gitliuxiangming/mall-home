@@ -94,21 +94,32 @@
 .floor{
 	margin-bottom: 20px;
 }
-.floor-wrap{
-
-}
 .floor-box{
-
+	margin-bottom: 40px;
 }
 .floor-title{
 	font-size: 18px;
+	margin-bottom: 15px;
+}
+.floor-box:nth-child(1) .floor-title{
 	color:#f21;
 	border-bottom: 2px solid #f21;
-	margin-bottom: 10px;
+}
+.floor-box:nth-child(2) .floor-title{
+	color:#ff1;
+	border-bottom: 2px solid #ff1;
+}
+.floor-box:nth-child(3) .floor-title{
+	color:#1ff;
+	border-bottom: 2px solid #1ff;
+}
+.floor-box:nth-child(4) .floor-title{
+	color:#f1f;
+	border-bottom: 2px solid #f1f;
 }
 .floor-item{
 	width:208px;
-	height: 300px;
+	height: 280px;
 	margin-right: 10px;
 	float: left;
 	text-align: center;
@@ -130,6 +141,6 @@
 }
 .floor-image{
 	width: 180px;
-	height: 200px;
+	height: 180px;
 	margin-top: 10px;
 }

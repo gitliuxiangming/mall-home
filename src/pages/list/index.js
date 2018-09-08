@@ -4,30 +4,48 @@ require('pages/common/footer')
 require('./index.css')
 
 var _util = require('util')
-var keywordTpl = require('./keywords.tpl')
+
 
 
 var page = {
-	keywords:[
-		{item:[{name:'折扣'},{name:'低价每日抢'}]},
-		{item:[{name:'大牌'},{name:'红旗'}]},
-		{item:[{name:'女装'},{name:'连衣裙'}]},
-		{item:[{name:'男装'},{name:'卫衣'},{name:'鞋子'}]},
-		{item:[{name:'数码'},{name:'手机'},{name:'iPhone'}]},
-		{item:[{name:'母婴'},{name:'奶粉辅食'}]},
-		{item:[{name:'家居'},{name:'整理收纳'}]},
-		{item:[{name:'美食'},{name:'各地特产'}]},
-		{item:[{name:'美妆'},{name:'精致妆容'}]},
-		{item:[{name:'箱包'},{name:'行李箱'}]}
-	],
-	init:function(){
-		this.loadKeywords()
+	listParams:{
+		keyword:_util.getParamFromUrl('keyword') || '',
+		categoryId:_util.getParamFromUrl('categoryId') || '',
+		page:_util.getParamFromUrl('page') || 1,
+		orderBy:_util.getParamFromUrl('orderBy') || 'default',
 	},
-	loadKeywords:function(){
-		var html = _util.render(keywordTpl,{
-			keywords:this.keywords
-		});
-		$(".keywords").html(html)
+	init:function(){
+		this.bindEvent()
+		this.loadProductList()
+	},
+	bindEvent:function(){
+		var _this=this;
+		$('.sort-item').on('click',function(){
+			var $this = $(this);
+			//如果点击的是默认排序
+			if($this.hasClass('default')){
+				if($this.hasClass('active')){
+					return;
+				}
+				$this.addClass('active').siblings('.sort-item').removeClass('active')
+				_this.listParams.orderBy = 'default'
+			}else if($this.hasClass('price')){
+				$this.addClass('active').siblings('.sort-item').removeClass('active')
+				if(!$this.hasClass('asc')){
+					$this.addClass('asc').removeClass('desc')
+					_this.listParams.orderBy = 'price_asc'
+				}else{
+					$this.addClass('desc').removeClass('asc')
+					_this.listParams.orderBy = 'price_desc'
+				}
+			}
+		})
+	},
+	loadProductList:function(){
+		console.log(this.listParams)
+		this.listParams.categoryId
+		?(delete this.listParams.keywords)
+		:(delete this.listParams.orderBy)
 	}
 }
 

@@ -3,13 +3,24 @@
 <head>
 	<%=require('html-loader!./common/header.html')%>
 	<title>
-		<% htmlWebpackPlugin.options.title %> -shopmall电商平台
+		<%= htmlWebpackPlugin.options.title %> - shopmall电商平台
 	</title>
 </head>
 <body>
 	<%=require('html-loader!./common/nav.html')%>
 	<%=require('html-loader!./common/search.html')%>
-	<h1>我是LIST页面</h1>
+	<div class="list">
+		<div class="container clearfix">
+			<ul class="sort">
+				<li class="sort-item default ">默认排序</li>
+				<li class="sort-item price asc active">
+					按价格
+					<i class="fa fa-sort-asc"></i>
+					<i class="fa fa-sort-desc"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
 
 
 
