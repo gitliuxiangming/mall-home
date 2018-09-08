@@ -1,12 +1,10 @@
 require('pages/common/nav')
 require('pages/common/search')
 require('pages/common/footer')
-require('util/carousel')
 require('./index.css')
 
 var _util = require('util')
 var keywordTpl = require('./keywords.tpl')
-var carouselTpl = require('./carousel.tpl')
 
 
 var page = {
@@ -22,41 +20,14 @@ var page = {
 		{item:[{name:'美妆'},{name:'精致妆容'}]},
 		{item:[{name:'箱包'},{name:'行李箱'}]}
 	],
-	carousel:[
-		{categoryId:'1111',image:require('images/carousel/carousel-1.jpg')},
-		{categoryId:'2222',image:require('images/carousel/carousel-2.jpg')},
-		{categoryId:'3333',image:require('images/carousel/carousel-3.jpg')}
-	],
 	init:function(){
 		this.loadKeywords()
-		this.loadCarousel()
 	},
 	loadKeywords:function(){
 		var html = _util.render(keywordTpl,{
 			keywords:this.keywords
 		});
 		$(".keywords").html(html)
-	},
-	loadCarousel:function(){
-		
-		var html = _util.render(carouselTpl,{
-			carousel:this.carousel
-		});
-		$(".carousel").html(html)
-		
-
-	    var $carousel = $('.carousel').unslider({
-	    	dots:true,
-	    	key:true
-	    });
-	   
-	    $('.arrow').on('click',function(){
-	    	var direction = $(this).hasClass('next') ? 'next' : 'prev';
-	    	$carousel.data('unslider')[direction]();
- 	    })
-
-	    
-	    
 	}
 }
 

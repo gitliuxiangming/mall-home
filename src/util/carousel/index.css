@@ -1,0 +1,15 @@
+.carousel 
+{ 
+	position: relative;
+	overflow: auto; 
+}
+.carousel ul{
+	height: 100%;
+	overflow: hidden;
+}
+.carousel li {
+	list-style: none;
+}
+.carousel ul li {
+	float: left; 
+}
