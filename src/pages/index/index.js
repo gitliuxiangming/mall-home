@@ -25,7 +25,12 @@ var page = {
 	carousel:[
 		{categoryId:'1111',image:require('images/carousel/carousel-1.jpg')},
 		{categoryId:'2222',image:require('images/carousel/carousel-2.jpg')},
-		{categoryId:'3333',image:require('images/carousel/carousel-3.jpg')}
+		{categoryId:'3333',image:require('images/carousel/carousel-3.jpg')},
+		{categoryId:'3333',image:require('images/carousel/carousel-4.jpg')},
+		{categoryId:'3333',image:require('images/carousel/carousel-5.jpg')},
+		{categoryId:'3333',image:require('images/carousel/carousel-6.jpg')},
+		{categoryId:'3333',image:require('images/carousel/carousel-7.jpg')},
+		{categoryId:'3333',image:require('images/carousel/carousel-8.jpg')},
 	],
 	init:function(){
 		this.loadKeywords()

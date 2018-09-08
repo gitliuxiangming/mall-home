@@ -1,6 +1,8 @@
-
+/*
+	焦点区样式
+*/
 .focus{
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 }
 .keywords{
 	float: left;
@@ -26,6 +28,10 @@
 .keyword-item .link:hover{
 	color:#f21;
 }
+
+/*
+	轮播图样式
+*/
 .carousel{
 	float: left;
 	width: 830px;
@@ -44,8 +50,8 @@
 .carousel .dots{
 	position: absolute;
 	bottom: 20px;
-	left: 50%;
-	margin-left: -29px;
+	left: 40%;
+	margin-left: 0;
 }
 .carousel .dot{
 	float: left;
@@ -56,6 +62,7 @@
 	border-radius: 50%;
 	border: 1px solid rgba(0,0,0,0.3);
 	color:#ccc;
+	cursor: pointer;
 }
 .carousel .dot.active{
 	background: rgba(0,0,0,0.5);
@@ -65,17 +72,64 @@
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	font-size: 18px;
+	font-size: 30px;
 	font-weight: bold;
 	position: absolute;
 	top:50%;
 	margin-top: -30px;
 	background: rgba(0,0,0,0.6);
 	color: #FFF;
+	cursor: pointer;
 }
 .carousel .arrow.next{
 	right: 0;
 }
 .carousel .arrow.prev{
 	left: 0;
+}
+
+/*
+	楼层样式
+*/
+.floor{
+	margin-bottom: 20px;
+}
+.floor-wrap{
+
+}
+.floor-box{
+
+}
+.floor-title{
+	font-size: 18px;
+	color:#f21;
+	border-bottom: 2px solid #f21;
+	margin-bottom: 10px;
+}
+.floor-item{
+	width:208px;
+	height: 300px;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 10px;
+	background: #fff;
+}
+.floor-item:last-child{
+	margin-right: 0px;
+}
+.floor-item a{
+	text-decoration: none;
+}
+.floor-text{
+	font-size: 18px;
+	font-weight:bold;
+	color:#111;
+
+}
+.floor-image{
+	width: 180px;
+	height: 200px;
+	margin-top: 10px;
 }
