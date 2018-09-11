@@ -20,7 +20,7 @@ var _util = {
 				}
 			},
 			error:function(err){
-				params.error && params.error(result.message)
+				params.error && params.error(err.message)
 			}
 		})
 	},

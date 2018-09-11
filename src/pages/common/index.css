@@ -134,3 +134,13 @@ loge共同样式
 .form-box .link-item{
 	text-align: right;
 }
+/*
+
+*/
+.empty-message{
+	text-align: center;
+	padding-top: 100px;
+	height: 300px;
+	font-size: 30px;
+	color: #0af;
+}

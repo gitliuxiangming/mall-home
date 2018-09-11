@@ -27,6 +27,8 @@ module.exports={
 		'user-update-password':'./src/pages/user-update-password/index.js',
 		'result':'./src/pages/result/index.js',
 		'list':'./src/pages/list/index.js',
+		'detail':'./src/pages/detail/index.js',
+		'cart':'./src/pages/cart/index.js',
 	},
 	/*
 	//额外配置jquery的模板
@@ -109,6 +111,8 @@ module.exports={
 		new HtmlWebpackPlugin(getHtmlConfig('user-content','用户中心')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('list','详情页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('detail','详情页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('cart','购物车页面')),
 		
 	], 
 	devServer: {
@@ -117,6 +121,14 @@ module.exports={
     	//代理
 		proxy:{
 			"/user":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
+			},
+			"/product":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
+			},
+			"/cart":{
 				target:'http://127.0.0.1:3000',
 				changeOrigin:true,
 			}

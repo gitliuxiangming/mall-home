@@ -34,11 +34,12 @@ var page = {
 	submit:function(){
 		var _self = this;
 		var keyword = $.trim($('#search-input').val());
-		if(keyword){
+		window.location.href = "./list.html?keyword="+keyword
+		/*if(keyword){
 			window.location.href = "./list.html?keyword="+keyword
 		}else{
 			_util.goHome()
-		}
+		}*/
 	}
 }
 
