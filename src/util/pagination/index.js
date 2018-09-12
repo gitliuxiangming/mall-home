@@ -13,7 +13,6 @@ var tpl = require('./index.tpl');
 			var _this = this;
 			this.$elem.on('click','.pagination-item',function(){
 				var $this = $(this);
-				console.log($(this).data('value'))
 				if ($this.hasClass('active') || $this.hasClass('disabled')) {
 					return
 				}
@@ -21,7 +20,6 @@ var tpl = require('./index.tpl');
 			})
 		},
 		render:function(options){
-			console.log(options);
 			var pages = Math.ceil(options.total / options.pageSize);
 			if (pages <= 1) {
 				return;
@@ -50,7 +48,6 @@ var tpl = require('./index.tpl');
 				value:next,
 				disabled:!hasNext
 			})
-			console.log(pageArray)
 			var html = _util.render(tpl,{
 				pageArray:pageArray,
 				current:options.current,

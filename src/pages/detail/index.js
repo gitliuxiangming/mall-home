@@ -41,7 +41,7 @@ var page = {
 			if($this.hasClass('plus')){
 				$input.val(current >= stoke ? stoke : current+1)
 			}else if($this.hasClass('minus')){
-				$input.val(current < stoke ? min : current-1)
+				$input.val(current > min ? current-1 : min)
 			}
 			if(current == stoke || current == min){
 				return;
@@ -64,7 +64,7 @@ var page = {
 		_product.getProductDetail({productId:this.params.productId},function(product){
 			if(product){
 				if (product.filePath) {
-					product.image = product.filePath.split(',',0);
+					product.image = product.filePath.split(',');
 				} else {
 					product.image = [require('images/product-default.jpg')]
 				}
