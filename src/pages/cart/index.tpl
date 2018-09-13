@@ -74,6 +74,6 @@
 </ul>
 {{/notEmpty}}
 {{^notEmpty}}
-<p class="empty-messafe">购物车空空如也！！！<a href="/" class="btn">立即去购物</a></p>
+<p class="empty-message">购物车空空如也！！！<a href="/" class="btn">立即去购物</a></p>
 
 {{/notEmpty}}

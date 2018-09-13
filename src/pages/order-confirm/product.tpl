@@ -20,9 +20,7 @@
 				￥{{product.price}}
 			</li>
 			<li class="product-count">
-				<span class="count-btn minus">-</span>
-				<input type="text" value="{{count}}" class="count-input" data-stoke={{product.stoke}}>
-				<span class="count-btn plus">+</span>
+				<span>{{count}}</span>
 			</li>
 			<li class="product-totalPrice">
 				￥{{totalPrice}}
@@ -40,9 +38,9 @@
 </div>
 {{/notEmpty}}
 {{^notEmpty}}
-<p class="empty-messafe">
+<p class="empty-message">
 	购物车没有商品！！！
-	<a href="./cart.html" class="btn">查看购物车</a>
+	<a href="./cart.html" class="btn gocart-btn">查看购物车</a>
 </p>
 
 {{/notEmpty}}
