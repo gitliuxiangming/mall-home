@@ -8,7 +8,7 @@ var nav = {
 	init:function(){
 		this.bindEvent();
 		this.loadUserInfo();
-		this.loadCartInfo();
+		this.loadCartCount();
 		return this;
 	},
 	bindEvent:function(){
@@ -26,7 +26,7 @@ var nav = {
 			$('.login').show().find('.username').text(userInfo.username)
 		})
 	},
-	loadCartInfo:function(){
+	loadCartCount:function(){
 		_cart.getCartCount(function(count){
 			$('.nav-list .cart-num').text(count || 0)
 		},function(){

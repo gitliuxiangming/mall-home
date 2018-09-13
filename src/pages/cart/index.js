@@ -30,19 +30,7 @@ var page = {
 		})
 
 	},
-	renderCart:function(cart){
-		_nav.loadCartInfo();
-		cart.cartList.forEach(item=>{
-			if(item.product.filePath){
-				item.product.image = item.product.filePath.split(',',1)
-			}else{
-				item.product.image = [require('images/product-default.jpg')]
-			}
-		})
-		cart.notEmpty = !!cart.cartList.length;
-		var html = _util.render(tpl,cart);
-		$('.cart-box').html(html);
-	},
+	
 	bindEvent:function(){
 		var _this=this;
 		//单个选择/取消
@@ -66,7 +54,7 @@ var page = {
 					_this.showPageError()
 				})
 			}
-		})
+		});
 		//全选/全不选
 		this.$box.on('click','.select-all',function(){
 			var $this = $(this);
@@ -87,7 +75,7 @@ var page = {
 					_this.showPageError()
 				})
 			}
-		})
+		});
 
 		//删除一个
 		this.$box.on('click','.delete-one',function(){
@@ -101,20 +89,19 @@ var page = {
 					_this.showPageError()
 				})
 			}
-		})
+		});
 
 		//删除选中的所有
 		this.$box.on('click','.delete-selected',function(){
 			var $this = $(this);
 			if(_util.confirm('你确定要删除该条购物车信息吗?')){
-				alert('ok')
 				_cart.deleteSelected(function(cart){
 					_this.renderCart(cart);
 				},function(msg){
 					_this.showPageError()
 				})
 			}
-		})
+		});
 
 		//更新购物车数量
 		this.$box.on('click','.count-btn',function(){
@@ -148,7 +135,37 @@ var page = {
 			},function(msg){
 				_this.showPageError()
 			})
+		});
+
+		//结算
+		this.$box.on('click','.btn-submit',function(){
+			if(_this.cart && _this.cart.totalCartPrice > 0){
+				window.location.href = './order-confirm.html'
+			}else{
+				_util.showErrorMsg('请选择商品后再提交！')
+			}
 		})
+
+
+
+	},
+	renderCart:function(cart){
+		//重新渲染顶部的购物车的数量
+		_nav.loadCartCount();
+		//缓存购物车信息，用来提交结算
+		this.cart = cart
+
+		//购物车数据适配
+		cart.cartList.forEach(item=>{
+			if(item.product.filePath){
+				item.product.image = item.product.filePath.split(',',1)
+			}else{
+				item.product.image = [require('images/product-default.jpg')]
+			}
+		})
+		cart.notEmpty = !!cart.cartList.length;
+		var html = _util.render(tpl,cart);
+		$('.cart-box').html(html);
 	},
 	showPageError:function(){
 		this.$box.html('<p class="empty-message">好像哪里出错了，刷新试试看</p>')

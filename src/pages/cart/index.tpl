@@ -26,7 +26,7 @@
 		{{/checked}}
 	</li>
 	<li class="product-info">
-		<a href="./detai.html?productId={{product._id}}" class="link">
+		<a href="./detail.html?productId={{product._id}}" class="link" target="_blank">
 			<img src="{{product.image}}" alt=""> 
 			<span>{{product.name}}</span>
 		</a>
@@ -69,7 +69,7 @@
 	<li class="product-submit">
 		<span class="total-price-text">总价:</span>
 		<span class="total-price">￥{{totalCartPrice}}</span>
-		<a href="javascript:;" class="btns btn-submit link">去结算</a>
+		<span class="btns btn-submit link">去结算</span>
 	</li>
 </ul>
 {{/notEmpty}}
