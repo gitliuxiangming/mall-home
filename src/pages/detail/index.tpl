@@ -29,7 +29,7 @@
 			<span class="btn-count minus">-</span>
 		</div>
 		<div class="add-cart">
-			<a href="javascript:;" class="btns link">添加购物车</a>
+			<span class="btns link add-cart-btn">添加购物车</span>
 		</div>
 	</div>
 </div>

@@ -48,7 +48,7 @@ var page = {
 			}
 		})
 		//添加购物车
-		$('.detail-box').on('click','.add-cart',function(){
+		$('.detail-box').on('click','.add-cart-btn',function(){
 			_cart.addCart({
 				productId:_this.params.productId,
 				count:$('.count-input').val()

@@ -109,8 +109,8 @@
 	background: #fefefe;
 	color:#f00;
 }
-.product-detail .tab{
-
+.product-detail .add-cart-btn{
+	user-select: none;
 }
 .product-detail .tab-list{
 	height: 40px;

@@ -36,7 +36,40 @@ var _cart = {
 			success:success,
 			error:error
 		})
-	}
+	},
+	selectAll:function(success,error){
+		_util.request({
+			url:'/cart/selectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	unselectAll:function(success,error){
+		_util.request({
+			url:'/cart/unselectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	deleteOne:function(data,success,error){
+		_util.request({
+			url:'/cart/deleteOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	deleteSelected:function(success,error){
+		_util.request({
+			url:'/cart/deleteSelected',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
 
 	
 }

@@ -82,7 +82,7 @@
 	background: #ddd;
 	color: #666;
 }
-.cart-item .product-opreation .delete-selected{
+.product-opreation .delete-selected{
 	cursor: pointer;
 	user-select: none;
 }

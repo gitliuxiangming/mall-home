@@ -16,7 +16,7 @@
 	<li class="product-opreation">操作</li>
 </ul>
 {{#cartList}}
-<ul class="cart-item clearfix data-product-id={{product._id}}">
+<ul class="cart-item clearfix" data-product-id={{product._id}}>
 	<li class="product-select">
 		{{#checked}}
 		<input type="checkbox" class="select-one" checked="checked" />
@@ -41,7 +41,7 @@
 		￥{{totalPrice}}
 	</li>
 	<li class="product-opreation">
-		<span class="delete-one">
+		<span class="delete-one link">
 			<i class="fa fa-trash-o"></i>
 			删除
 		</span>
@@ -59,7 +59,7 @@
 		<span>全选</span>
 	</li>
 	<li class="product-opreation">
-		<span class="delete-selected">
+		<span class="delete-selected link">
 			<i class="fa fa-trash-o"></i>
 			删除选中
 		</span>

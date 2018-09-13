@@ -27,6 +27,9 @@ var _util = {
 	showErrorMsg:function(msg){
 		alert(msg)
 	},
+	confirm:function(msg){
+		return window.confirm(msg)
+	},
 	render:function(tmp,data){
 		var template = Hogan.compile(tmp);
 		var html = template.render(data);
