@@ -1,0 +1,72 @@
+/*
+送货地址
+*/
+.shipping-item,
+.shipping-add{
+	float: left;
+	width: 300px;
+	margin:0px 20px 20px 0px;
+	padding: 10px;
+	border:4px dashed #ddd;
+}
+.shipping-item.active{
+	border-color: #f21;
+}
+.shipping-title{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ddd;
+	font-size: 16px;
+	color: #666;
+}
+.shipping-detail{
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #666;
+}
+.shipping-add{
+	height: 116px;
+	font-size: 30px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #555;
+}
+.shipping-footer{
+	float: right;
+	visibility:hidden;
+}
+.shipping-footer .link{
+	color: #f0f;
+}
+.shipping-item:hover .shipping-footer{
+	visibility:visible;
+}
+
+.product-box .cart-title li,
+.product-box .cart-item li,
+.product-box .cart-footer li{
+	float: left;
+}
+.product-box .cart-title,
+.product-box .cart-item,
+.product-box .cart-footer{
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.product-box .product-info{
+	width:70%;
+}
+.product-box .product-price{
+	width: 10%;
+}
+.product-box .product-count{
+	width: 10%;
+}
+.product-box .product-opreation{
+	width: 10%;
+}
+.product-box .cart-footer .product-submit{
+	float: right;
+}
