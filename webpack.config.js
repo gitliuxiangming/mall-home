@@ -133,6 +133,10 @@ module.exports={
 			"/cart":{
 				target:'http://127.0.0.1:3000',
 				changeOrigin:true,
+			},
+			"/order":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
 			}
 		}    	
    	},
