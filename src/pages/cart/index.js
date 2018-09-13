@@ -1,4 +1,4 @@
-require('pages/common/nav');
+var _nav = require('pages/common/nav');
 require('pages/common/search');
 require('pages/common/footer');
 require('util/pagination');
@@ -31,6 +31,7 @@ var page = {
 
 	},
 	renderCart:function(cart){
+		_nav.loadCartInfo();
 		cart.cartList.forEach(item=>{
 			if(item.product.filePath){
 				item.product.image = item.product.filePath.split(',',1)
@@ -109,10 +110,44 @@ var page = {
 				alert('ok')
 				_cart.deleteSelected(function(cart){
 					_this.renderCart(cart);
-				},function(){
+				},function(msg){
 					_this.showPageError()
 				})
 			}
+		})
+
+		//更新购物车数量
+		this.$box.on('click','.count-btn',function(){
+			var $this = $(this);
+			let productId = $this.parents('.cart-item').data('product-id');
+			var $input = $this.siblings('.count-input');
+			var current = parseInt($input.val());
+			var max = $input.data('stoke');
+			var min = 1;
+			var newCount = 0;
+			//增加
+			if($this.hasClass('plus')){
+				if(current>=max){
+					_util.showErrorMsg('只有这么多啦')
+					return
+				}
+				newCount = current+1; 
+			}
+			//减少
+			else if($this.hasClass('minus')){
+				if(current <= min){
+					_util.showErrorMsg('太少啦')
+					return
+				}
+				newCount = current-1;
+			}
+
+			//修改数量
+			_cart.updateCount({productId:productId,count:newCount},function(cart){
+				_this.renderCart(cart);
+			},function(msg){
+				_this.showPageError()
+			})
 		})
 	},
 	showPageError:function(){

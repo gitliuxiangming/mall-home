@@ -2,6 +2,7 @@
 require('./index.css')
 var _user = require('service/user')
 var _util = require('util')
+var _cart = require('service/cart')
 
 var nav = {
 	init:function(){
@@ -26,7 +27,11 @@ var nav = {
 		})
 	},
 	loadCartInfo:function(){
-
+		_cart.getCartCount(function(count){
+			$('.nav-list .cart-num').text(count || 0)
+		},function(){
+			$('.nav-list .cart-num').text(0)
+		})
 	},
 }
 

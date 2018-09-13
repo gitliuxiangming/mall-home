@@ -70,6 +70,23 @@ var _cart = {
 			error:error
 		})
 	},
+	updateCount:function(data,success,error){
+		_util.request({
+			url:'/cart/updateCount',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	getCartCount:function(success,error){
+		_util.request({
+			url:'/cart/getCartCount',
+			method:'get',
+			success:success,
+			error:error
+		})
+	}
 
 	
 }

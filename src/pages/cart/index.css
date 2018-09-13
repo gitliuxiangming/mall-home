@@ -64,6 +64,8 @@
 	text-align: center;
 	border: 1px solid #ddd;
 	background: #fff;
+	cursor: pointer;
+	user-select: none;
 }
 .cart-item .product-count .plus{
 	margin-left: -1px;
