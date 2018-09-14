@@ -10,7 +10,16 @@ var _order = {
 			success:success,
 			error:error
 		})
-	}
+	},
+	createOrder:function(data,success,error){
+		_util.request({
+			url:'order',
+			method:'post',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
 
 	
 }

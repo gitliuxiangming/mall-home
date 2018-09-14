@@ -82,7 +82,6 @@ var page = {
 			var $this = $(this);
 			let productId = $this.parents('.cart-item').data('product-id')
 			if(_util.confirm('你确定要删除该条购物车信息吗')){
-				alert('ok')
 				_cart.deleteOne({productId:productId},function(cart){
 						_this.renderCart(cart);
 				},function(){

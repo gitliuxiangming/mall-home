@@ -31,7 +31,7 @@
 			<li class="product-submit">
 				<span class="total-price-text">总价:</span>
 				<span class="total-price">￥{{totalCartPrice}}</span>
-				<span class="btns btn-submit link">去结算</span>
+				<span class="btns btn-submit link">去支付</span>
 			</li>
 		</ul>
 	</div>

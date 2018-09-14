@@ -137,6 +137,10 @@ module.exports={
 			"/order":{
 				target:'http://127.0.0.1:3000',
 				changeOrigin:true,
+			},
+			"/shipping":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
 			}
 		}    	
    	},
