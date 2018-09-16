@@ -70,6 +70,7 @@ var page = {
 			var $this = $(this);
 			if(_this.data.shippingId){
 				_order.createOrder({shippingId:_this.data.shippingId},function(order){
+					alert('支付成功')
 					console.log(order)
 					// window.location.href = "./payment.html?orderNo="+order.orderNo;
 				},function(msg){
@@ -90,11 +91,11 @@ var page = {
 	},
 	rederShipping:function(shippings){
 		var _this=this;
-		// shippings.forEach(function(shipping){
-		// 	if(shipping._id == _this.data.shippingId){
-		// 		shipping.isActive = true;
-		// 	}
-		// })
+		shippings.forEach(function(shipping){
+			if(shipping._id == _this.data.shippingId){
+				shipping.isActive = true;
+			}
+		})
 		var html = _util.render(shippingTpl,{
 			shippings:shippings
 		})

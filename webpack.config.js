@@ -30,6 +30,9 @@ module.exports={
 		'detail':'./src/pages/detail/index.js',
 		'cart':'./src/pages/cart/index.js',
 		'order-confirm':'./src/pages/order-confirm/index.js',
+		'order-list':'./src/pages/order-list/index.js',
+		'order-detail':'./src/pages/order-detail/index.js',
+		'payment':'./src/pages/payment/index.js',
 	},
 	/*
 	//额外配置jquery的模板
@@ -115,6 +118,9 @@ module.exports={
 		new HtmlWebpackPlugin(getHtmlConfig('detail','详情页面')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart','购物车页面')),
 		new HtmlWebpackPlugin(getHtmlConfig('order-confirm','结算页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
+		new HtmlWebpackPlugin(getHtmlConfig('payment','支付页面')),
 		
 	], 
 	devServer: {
@@ -139,6 +145,10 @@ module.exports={
 				changeOrigin:true,
 			},
 			"/shipping":{
+				target:'http://127.0.0.1:3000',
+				changeOrigin:true,
+			},
+			"/payment":{
 				target:'http://127.0.0.1:3000',
 				changeOrigin:true,
 			}

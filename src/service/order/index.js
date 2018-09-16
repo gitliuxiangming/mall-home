@@ -20,6 +20,34 @@ var _order = {
 			error:error
 		})
 	},
+	getOrderList:function(data,success,error){
+		_util.request({
+			url:'order/list',
+			method:'get',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	getOrderDetail:function(data,success,error){
+		_util.request({
+			url:"/order/detail",
+			data:data,
+			success:success,
+			error:error
+
+		})
+	},
+	updateCancel:function(data,success,error){
+			_util.request({
+			url:"/order/cancel",
+			data:data,
+			method:"put",
+			success:success,
+			error:error
+
+		})
+	}
 
 	
 }

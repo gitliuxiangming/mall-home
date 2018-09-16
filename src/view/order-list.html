@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%=require('html-loader!./common/header.html')%>
+	<title>
+		<%= htmlWebpackPlugin.options.title %> -shopmall电商平台
+	</title>
+</head>
+<body>
+	<%=require('html-loader!./common/nav.html')%>
+	<%=require('html-loader!./common/search.html')%>
+	<div class="user-page-wrap">
+		<div class="container clearfix">
+			<%=require('html-loader!./common/side.html')%>
+			<div class="content clearfix">
+				<div class="order-list clearfix">
+					
+				</div>
+				<div class="pagination-box clearfix">
+				
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+
+
+	
+	<%=require('html-loader!./common/footer.html')%>
+</body>
+</html>

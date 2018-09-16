@@ -1,0 +1,45 @@
+.cart-title li,
+.cart-item li,
+.cart-footer li{
+	float: left;
+}
+.cart-title,
+.cart-item,
+.cart-footer{
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.cart-footer{
+	height: 20px;
+}
+.product-select{
+	width: 6%;
+}
+.content .product-info{
+	width: 54%;
+}
+.content .product-price{
+	width: 10%;
+}
+.content .product-count{
+	width: 10%;
+}
+.content .product-totalPrice{
+	width: 10%;
+}
+.content .product-opreation{
+	width: 10%;
+}
+.order-title{
+	width:100%;
+	height: 40px;
+}
+.order-title li{
+	float:left;
+	margin-right: 20px;
+	
+}
+.content{
+	float: right;
+	width: 910px;
+}
