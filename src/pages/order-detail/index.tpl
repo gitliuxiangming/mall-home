@@ -34,7 +34,6 @@
 		{{/cancel}}
 	</li>
 </ul>
-
 <ul class="product-header ">
 	
 	<li class="header-product">
@@ -48,10 +47,8 @@
 	</li>
 	<li class="header-count">
 		小计
-	</li>
-	
+	</li>	
 </ul>
-
 {{#productList}}
 <ul class="product-item" data-product-id= "{{productList.product}}">
 	
@@ -70,7 +67,6 @@
 	<li class="product-totalprice">
 		￥{{payment}}
 	</li>
-
 </ul>
 {{/productList}}
 

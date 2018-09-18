@@ -22,7 +22,7 @@ var _order = {
 	},
 	getOrderList:function(data,success,error){
 		_util.request({
-			url:'order/list',
+			url:'order/home/list',
 			method:'get',
 			data:data,
 			success:success,
@@ -31,7 +31,7 @@ var _order = {
 	},
 	getOrderDetail:function(data,success,error){
 		_util.request({
-			url:"/order/homedetail",
+			url:"/order/home/detail",
 			data:data,
 			success:success,
 			error:error
