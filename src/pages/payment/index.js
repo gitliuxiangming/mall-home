@@ -1,4 +1,4 @@
-require('./index.css');
+	require('./index.css');
 
 require('pages/common/logo');
 require('pages/common/footer');

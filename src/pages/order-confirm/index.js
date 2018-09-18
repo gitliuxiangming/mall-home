@@ -68,16 +68,19 @@ var page = {
 		//提交订单
 		$('.product-box').on('click','.btn-submit',function(){
 			var $this = $(this);
+			console.log(_this.data.shippingId)
 			if(_this.data.shippingId){
 				_order.createOrder({shippingId:_this.data.shippingId},function(order){
 					alert('支付成功')
-					console.log(order)
-					// window.location.href = "./payment.html?orderNo="+order.orderNo;
+					window.location.href = "./payment.html?orderNo="+order.orderNo;
+					
 				},function(msg){
 					_util.showErrorMsg(msg)
 				})
 			}else{
-				_util.showErrorMsg('请选择地址')
+				_util.showErrorMsg('请选择地址');
+				// window.location.href = "./order-confirm.html?orderNo="+order.orderNo;
+
 			}		
 		})
 	},

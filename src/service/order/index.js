@@ -31,7 +31,7 @@ var _order = {
 	},
 	getOrderDetail:function(data,success,error){
 		_util.request({
-			url:"/order/detail",
+			url:"/order/homedetail",
 			data:data,
 			success:success,
 			error:error

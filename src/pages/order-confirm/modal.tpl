@@ -50,9 +50,6 @@
 					<div class="btn-item">
 						<a href="javascript:;" class="btn btn-submit" id="btn-submit">提交</a>
 					</div>
-					<div class="link-item">
-						<a href="./user-login.html" class="link">已有账号去登陆</a>
-					</div>
 				</div>
 			</div>
 		</div>
